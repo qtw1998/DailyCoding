@@ -1,5 +1,11 @@
 package LinkedList;
-
+/*           arrylist           LinkedList
+add(0, v)      O(1)                O(1)   
+add(n, v)      O(1)                O(n)
+add            O(1)                O(n)
+get            O(1)                O(n)
+set            O(1)                O(n)
+*/
 class MyLinkedList {
     private ListNode dummy = new ListNode(-1); // private ListNode head;
 
