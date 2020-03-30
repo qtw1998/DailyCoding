@@ -1,3 +1,5 @@
+package LinkedList;
+
 public class LinkList {
 
     public static void main(final String[] args) {
