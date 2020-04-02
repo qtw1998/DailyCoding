@@ -1,4 +1,4 @@
-package Stack;
+package StackQueue;
 //import java.util.Stack;
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +17,15 @@ public class Main {
         mystack.push(3);
         while(!mystack.isEmpty()) {
             System.out.println(mystack.pop());
+        }
+
+        MyQueue myqueue = new MyQueue();
+        myqueue.offer(10);
+        myqueue.offer(2);
+        myqueue.offer(3);
+        while(!myqueue.isEmpty()) {
+            System.out.print(myqueue.peek() + " ");
+            myqueue.poll();
         }
     }
 }
