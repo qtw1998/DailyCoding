@@ -1,4 +1,10 @@
 package StackQueue;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 //import java.util.Stack;
 public class Main {
     public static void main(String[] args) {
@@ -26,6 +32,41 @@ public class Main {
         while(!myqueue.isEmpty()) {
             System.out.print(myqueue.peek() + " ");
             myqueue.poll();
+        }
+
+        Set<Integer> set = new HashSet<>(); // TreeSet log(n) HashSet O(1)
+        set.add(10);
+        set.add(20);
+        set.add(-3);
+        set.add(8);
+
+        System.out.println(set.contains(10));
+        set.remove(8);
+        System.out.println(set.contains(8));
+
+        System.out.println(set.size());
+        for(int num: set) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        """
+                        put             get
+        List            O(n)            O(n)
+        Balanced BST  O(log n)        O(log n)
+        Hash Table      O(1)            O(1)
+        """
+        Map<String, String> map = new HashMap<>();
+        map.put("David", "SJTU");
+        map.put("Cindy", "MIT");
+        map.put("Tom", "Berkeley");
+        map.put("Alex", "Stanford");
+
+        System.out.println(map.get("David"));
+        System.out.println(map.size());
+        System.out.println(map.isEmpty());
+
+        for(String key: map.keySet()) {
+            System.out.println(key + " " + map.get(key));
         }
     }
 }
