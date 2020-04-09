@@ -8,7 +8,7 @@ public class Extends {
     }
 
     public static void printAnimal(Animal animal) {
-        if(animal instanceof Dog) {
+        if(animal instanceof Dog) { // "instanceof" --> to classify which class
             System.out.println("I'm " + animal.toString() + ".");
         } else {
             System.out.println("I'm " + animal.toString() + ".");
