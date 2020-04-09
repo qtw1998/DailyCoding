@@ -51,12 +51,12 @@ public class Main {
             System.out.print(num + " ");
         }
         System.out.println();
-        """
-                        put             get
-        List            O(n)            O(n)
-        Balanced BST  O(log n)        O(log n)
-        Hash Table      O(1)            O(1)
-        """
+        
+        //                 put             get
+        // List            O(n)            O(n)
+        // Balanced BST  O(log n)        O(log n)
+        // Hash Table      O(1)            O(1)
+        
         Map<String, String> map = new HashMap<>();
         map.put("David", "SJTU");
         map.put("Cindy", "MIT");
