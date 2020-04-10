@@ -12,8 +12,9 @@ class AnimalMove {
         System.out.println("Animals could move.");
     }
 }
+
 class DogMove extends AnimalMove {
-    @Override
+    @Override // able to omit
     public void move() {
         super.move();
         System.out.println("Dogs could move.");
