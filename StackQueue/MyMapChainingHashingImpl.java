@@ -36,10 +36,11 @@ public class MyMapChainingHashingImpl {
         while(cur != null) {
             if(cur.pair.key.equals(key)) {
                 cur.pair.value = val;
-                return; // after modifying ☆
+                return; // ☆ after modifying 
             }
             cur = cur.next;
         }
+
         MapListNode newNode = new MapListNode(new Pair(key, val));
         // insert between the new and head
         newNode.next = data[index];
@@ -60,7 +61,10 @@ public class MyMapChainingHashingImpl {
 
    public void doubleSizeAndRehash() {
         int newCapacity = this.capacity * 2;
-               
+        MapListNode[] newData = new MapListNode[newCapacity];
+        for(int i = 0; i < capacity; i++) {
+            newData[i] = data[i];
+        }
 
    }
 }
