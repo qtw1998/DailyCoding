@@ -1,4 +1,4 @@
-package StackQueue;
+package StackQueueHash;
 // 确定性 不可逆性
 // NICE: less collision & low time complexion
 // modulo division 除余法| mid-square 平方取中法| radix transformation基数转换法

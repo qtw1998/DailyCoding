@@ -1,4 +1,4 @@
-package StackQueue;
+package StackQueueHash;
 
 public class Pair {
     String key;
