@@ -45,6 +45,7 @@ public class MyMapChainingHashingImpl {
         // insert between the new and head
         newNode.next = data[index];
         data[index] = newNode;
+        
         size++;
     }
     
@@ -63,9 +64,18 @@ public class MyMapChainingHashingImpl {
         int newCapacity = this.capacity * 2;
         MapListNode[] newData = new MapListNode[newCapacity];
         for(int i = 0; i < capacity; i++) {
-            newData[i] = data[i];
-        }
+            MapListNode cur = data[i];
+            while(cur != null) {
+                MapListNode tmp = cur;
+                cur = cur.next;
 
+                int newIndex = tmp.pair.key.hashCode() % newCapacity;
+                tmp.next = newData[newIndex];
+                newData[newIndex] = tmp;
+            }
+        }
+        capacity = newCapacity;
+        data = newData;
    }
 }
 
