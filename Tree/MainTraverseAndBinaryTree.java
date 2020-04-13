@@ -40,6 +40,10 @@ public class MainTraverseAndBinaryTree {
      * DETACHMENT: fibonacci(n - 1) + fibonacci(n - 2)
      */
 
+
+    // O(n) DepthSearch Time Complexity
+    // O(h) logn < h < n Zone Complexity 
+    // 全摊开： h = log2(n + 1), 全偏： h = n
     public static void traverse(TreeNode root) { // preorderTraverse
         if(root == null) return;
 
