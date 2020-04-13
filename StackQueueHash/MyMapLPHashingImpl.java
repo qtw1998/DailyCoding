@@ -40,5 +40,6 @@ public class MyMapLPHashingImpl {
                 return null;
             }
         }
+        return null;
     }
 }

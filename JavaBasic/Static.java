@@ -10,7 +10,7 @@ public class Static {
 class PointStatic {
     private static int value = 0;
 
-    public static int getValue() {
+    public int getValue() {
         return value; // omit this.
     }
     // build when the class has been built
