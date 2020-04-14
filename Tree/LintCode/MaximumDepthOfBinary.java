@@ -1,5 +1,5 @@
 package Tree.LintCode;
 
 public class MaximumDepthOfBinary {
-    abcd
+    12345
 }
