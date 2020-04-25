@@ -1,4 +1,4 @@
-#### [Binary Tree Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+#### Binary Tree Level Order Traversal
 
 ```java
 /**
@@ -33,7 +33,7 @@ class Solution {
 }
 ```
 
-Convert Binary Tree to Linked Lists by DepthFollow
+#### Convert Binary Tree to Linked Lists by DepthFollow
 
 ```java
 /**
@@ -79,6 +79,49 @@ public class Solution {
             res.add(dummy.next);
         }
         return res;
+    }
+}
+```
+
+## Divide and Conquer
+
+### Identical Binary Tree
+
+-  root
+- left child tree
+- right child tree
+
+```java
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+
+public class Solution {
+    /**
+     * @param a: the root of binary tree a.
+     * @param b: the root of binary tree b.
+     * @return: true if they are identical, or false.
+     */
+    public boolean isIdentical(TreeNode a, TreeNode b) {
+        // write your code here
+        if(a == null && b == null) {
+            return true;
+        }else if (a == null || b == null) {
+            return false;
+        }
+        
+        if(a.val != b.val) {
+            return false;
+        }
+        return isIdentical(a.left, b.left) && isIdentical(a.right, b.right);
     }
 }
 ```
