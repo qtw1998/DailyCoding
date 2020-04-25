@@ -3,7 +3,8 @@ package Tree.LintCode;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MaximumDepthOfBinary {
+// O(n) 宽度优先遍历
+public class breadthTraverse {
     public static void main(String[] args) {
         TreeNode root = buildTree();
         //breadthFirstTraverse(root); // 8 3 10 1 6 14 4 7 13
