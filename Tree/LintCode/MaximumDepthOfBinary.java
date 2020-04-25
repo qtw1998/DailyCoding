@@ -1,8 +1,13 @@
 package Tree.LintCode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MaximumDepthOfBinary {
     public static void main(String[] args) {
-
+        TreeNode root = buildTree();
+        //breadthFirstTraverse(root); // 8 3 10 1 6 14 4 7 13
+        breadthDepthWiseTraverse(root);
     }
 
     public static TreeNode buildTree() {
@@ -33,7 +38,31 @@ public class MaximumDepthOfBinary {
 
     public static void breadthFirstTraverse(TreeNode root) {
         if(root == null) return;
-        
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            System.out.print(cur.val + " ");
+            if (cur.left != null) queue.offer(cur.left);
+            if (cur.right != null) queue.offer(cur.right);
+        }
+    }
+
+    // by Depth: O(n) 进队列一次，出队列一次
+    public static void breadthDepthWiseTraverse(TreeNode root) {
+        if(root == null) return;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            for(int i = 0; i < size; i++) {
+                TreeNode cur = queue.poll();
+                System.out.print(cur.val + "  ");
+                if(cur.left != null) queue.offer(cur.left);
+                if(cur.right != null) queue.offer(cur.right);
+            }
+            System.out.println();
+        }
     }
 
     static class  TreeNode {
