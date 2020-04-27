@@ -200,3 +200,56 @@ public class Solution {
 }
 ```
 
+## Sort
+
+### Simple
+
+> Time: O(n^2) Zone: O(1)
+
+#### Selection sort
+
+ 
+
+#### Insertion sort
+
+#### Bubble sort
+
+### Merge Sort
+
+#### Merge Two Sorted Arrays
+
+Merge Time & Zone Complexity: O(n)
+
+ ```java
+public class Solution {
+    /**
+     * @param A: sorted integer array A
+     * @param B: sorted integer array B
+     * @return: A new sorted integer array
+     */
+    // https://www.lintcode.com/problem/merge-two-sorted-arrays
+    public int[] mergeSortedArray(int[] A, int[] B) {
+        if(A == null) return A;
+        if(B == null) return B;
+        
+        int lenA = A.length, lenB = B.length;
+        int lenNew = lenA + lenB;
+        int[] res = new int[lenNew];
+        // two pointer
+        int i = 0, j = 0;
+        
+        for(int k = 0; k < lenNew; k++) {
+            if(i < lenA && (j >= lenB || A[i] <= B[j])) {
+                res[k] = A[i++];
+            } else{
+                res[k] = B[j++];
+            }
+        }
+        return res;
+    }
+}
+ ```
+
+
+
+### Quick Sort
