@@ -1,4 +1,7 @@
 package sort;
+
+import java.util.*;
+
 // https://site-pictures.oss-eu-west-1.aliyuncs.com/e7hyt.png
 // MergeSort
 // Time complexity: O(nlogn)
@@ -8,9 +11,39 @@ package sort;
 public class SortAlgos {
     public static void main(String[] args) {
         int[] array = new int[] {5, 4, 9, 2, 1};
-        quickSort(array);
-        for(int k = 0; k < array.length; ++k) {
-            System.out.print(array[k] + " ");
+        //quickSort(array);
+        Arrays.sort(array); // in Java
+        for(int num: array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        List<Integer> arrayList = new  ArrayList<>(); // Dynamic Size vs. int[]
+        arrayList.add(6);
+        arrayList.add(4);
+        arrayList.add(5);
+        arrayList.add(7);
+
+        Collections.sort(arrayList);
+        for(Integer num: arrayList) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        Comparator<Integer> comparator = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) { // if return negative values, o1 o2
+                //if (o1 > o2) {
+                //    return -1;
+                //} else if (o1 < o2) {
+                //    return 1;
+                //}
+                //return 0;
+                return o2 - o1;
+            }
+        };
+        Collections.sort(arrayList, comparator);
+        for(Integer num: arrayList) {
+            System.out.print(num + " ");
         }
     }
     private static void swap(int[] array, int i, int j) {

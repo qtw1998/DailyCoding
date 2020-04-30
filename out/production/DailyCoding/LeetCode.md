@@ -1,4 +1,4 @@
-#### Binary Tree Level Order Traversal
+####   Binary Tree Level Order Traversal
 
 ```java
 /**
@@ -204,9 +204,13 @@ public class Solution {
 
 ### Simple
 
-> Time: O(n^2) Zone: O(1)
+> Time: O(n^2)
+>
+>  Zone: O(1)
 
 #### Selection sort
+
+
 
 #### Insertion sort
 
@@ -295,7 +299,7 @@ public class SortAlgos {
                 tmp[k] = array[j++];
             }
         }
-        for(int k = 0; k < n; k++) { // m
+        for(int k = 0; k < n; k++) { // m 
             array[left + k] = tmp[k];
         }
     }
@@ -311,11 +315,104 @@ Thinking:
 - Recursive: sort left and right parts
 - First integreted, then local part 
 
+Complexity:
+
+- Time Complexity: **O(nlogn)** worst->O(n^2)
+- Zone Complexity: average(**O(logn)**) worst(O(n)) no new arries built
+
+> **Steps：**
+>
 > 1. pick the pivot 
 > 2. partition 
 > 3. recurse
 
 ```java
+package sort;
+// https://site-pictures.oss-eu-west-1.aliyuncs.com/e7hyt.png
+// MergeSort
+// Time complexity: O(nlogn)
+// Zone Complexity: O(n)
+// Stack: O(logn) -> layer number
+// Pile: O(nlogn) -> O(n)
+public class SortAlgos {
+    public static void main(String[] args) {
+        int[] array = new int[] {5, 4, 9, 2, 1};
+        quickSort(array);
+        for(int k = 0; k < array.length; ++k) {
+            System.out.print(array[k] + " ");
+        }
+    }
+    private static void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+    private static void quickSort(int[] array) {
+        quickSortHelper(array, 0, array.length - 1);
+    }
+    private static void quickSortHelper(int[] array, int left, int right) {
+        if(left >= right) return;
+        int i = left, j = right;
+        int pivot = array[left + (right - left) / 2];
+
+        while(i <= j) {
+            while(i <= j && array[i] < pivot) {
+                ++i;
+            }
+            while(i <= j && array[j] > pivot) {
+                --j;
+            }
+            if(i <= j) {
+                swap(array, i++, j--);
+            }
+        }
+        quickSortHelper(array, left, j);
+        quickSortHelper(array, i, right);
+    }
+}
 
 ```
+
+🥗 More Details
+
+1. How to pick the **pivot**? 
+
+    - From 1st position && in order: [1, 2, 3, 4, 5]   --- O(n^2)    (n + 1)n / 2
+    - random from the array 
+
+    <img src="https://site-pictures.oss-eu-west-1.aliyuncs.com/k3hn6.png" style="zoom:33%;" />
+
+2. How to define the **boundary** in subproblems?
+
+    - definitely **[left, j] [i, right]** 
+    - leave alone: **pivot**
+    - different methods different boundaries
+
+    <img src="https://site-pictures.oss-eu-west-1.aliyuncs.com/1x2lt.png" style="zoom:33%;" />
+
+3. Why `while(i <= j && array[i] < pivot) `  not `array[i] <= pivot`?
+
+    - subproblems size < origin problems
+    - make the subproblems size equal -> decrease the time complexity
+
+    <img src="https://site-pictures.oss-eu-west-1.aliyuncs.com/1b2yy.png" style="zoom:33%;" />
+
+#### Sort in Java
+
+- Arrays.sort
+
+- Collections.sort [list: interface] -> ArrayList LinkedList
+
+- Self-define method
+
+    ```java
+    Comparator<Integer> comparator = new Comparator<Integer>() {
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            return o1 - o2
+        }
+    }
+    ```
+
+    
 
