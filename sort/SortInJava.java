@@ -8,7 +8,7 @@ public class SortInJava {
         bubbleSort(arrayList);
         for(Integer num: arrayList) {
             System.out.print(num + " ");
-        }//
+        }
     }
     // tail -> SORTED part
     public static void bubbleSort(int[] arrayList) {
