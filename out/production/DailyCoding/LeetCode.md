@@ -210,11 +210,45 @@ public class Solution {
 
 #### Selection sort
 
-
+```java
+public static void insertionSort(int[] arrayList) {
+        for(int j = 1; j < arrayList.length; ++j) {
+            int pivot = arrayList[j];
+            int i = j - 1;
+            while(i >= 0 && pivot < arrayList[i]) {
+                arrayList[i + 1] = arrayList[i--];
+            }
+            arrayList[i + 1] = pivot;
+        }
+    }
+```
 
 #### Insertion sort
 
+```java
+public static void selectionSort(int[] arrayList) {
+        for(int i = 0; i < arrayList.length; ++i) {
+            for(int j = i + 1; j < arrayList.length; ++j) {
+                if(arrayList[j] < arrayList[i]) {
+                    swap(arrayList, i, j);
+                }
+            }
+        }
+    }
+    private static void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+```
+
 #### Bubble sort
+
+```java
+
+```
+
+
 
 ### Merge Sort
 
