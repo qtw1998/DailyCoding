@@ -211,7 +211,23 @@ public class Solution {
 #### Selection sort
 
 ```java
-public static void insertionSort(int[] arrayList) {
+// select smallest in the unsorted part
+    public static void selectionSort(int[] arrayList) {
+        for(int i = 0; i < arrayList.length; ++i) {
+            for(int j = i + 1; j < arrayList.length; ++j) {
+                if(arrayList[j] < arrayList[i]) {
+                    swap(arrayList, i, j);
+                }
+            }
+        }
+    }
+```
+
+#### Insertion sort
+
+```java
+// sorted part + unsorted part (pick and insert in the SORTED part)
+    public static void insertionSort(int[] arrayList) {
         for(int j = 1; j < arrayList.length; ++j) {
             int pivot = arrayList[j];
             int i = j - 1;
@@ -223,32 +239,20 @@ public static void insertionSort(int[] arrayList) {
     }
 ```
 
-#### Insertion sort
+#### Bubble sort
 
 ```java
-public static void selectionSort(int[] arrayList) {
-        for(int i = 0; i < arrayList.length; ++i) {
-            for(int j = i + 1; j < arrayList.length; ++j) {
-                if(arrayList[j] < arrayList[i]) {
-                    swap(arrayList, i, j);
+// tail -> SORTED part
+    public static void bubbleSort(int[] arrayList) {
+        for(int j = arrayList.length - 1; j > 0; --j) {
+            for(int i = 0; i < j; ++i) {
+                if(arrayList[i] > arrayList[i + 1]) {
+                    swap(arrayList, i, i + 1);
                 }
             }
         }
     }
-    private static void swap(int[] array, int i, int j) {
-        int tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
-    }
 ```
-
-#### Bubble sort
-
-```java
-
-```
-
-
 
 ### Merge Sort
 
