@@ -1,7 +1,8 @@
 package sort;
 
 import java.util.*;
-
+// Time Complexity: O(n^2)
+// Zone Complexity: O(1)
 public class SimpleSortMethods {
     public static void main(String[] args) {
         int[] arrayList = new int[] {4, 5, 1, 2, -1, 0};
