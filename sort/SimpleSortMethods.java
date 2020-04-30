@@ -2,7 +2,7 @@ package sort;
 
 import java.util.*;
 
-public class SortInJava {
+public class SimpleSortMethods {
     public static void main(String[] args) {
         int[] arrayList = new int[] {4, 5, 1, 2, -1, 0};
         bubbleSort(arrayList);

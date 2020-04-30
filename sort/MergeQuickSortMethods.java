@@ -8,7 +8,7 @@ import java.util.*;
 // Zone Complexity: O(n)
 // Stack: O(logn) -> layer number
 // Pile: O(nlogn) -> O(n)
-public class SortAlgos {
+public class MergeQuickSortMethods {
     public static void main(String[] args) {
         int[] array = new int[] {5, 4, 9, 2, 1};
         //quickSort(array);
