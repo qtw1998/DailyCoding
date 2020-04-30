@@ -11,13 +11,26 @@ public class SortInJava {
         }
     }
     public static void bubbleSort(int[] arrayList) {
+        for(int j = arrayList.length - 1; j > 0; --j) {
+            for(int i = 0; i < j; ++i) {
+                if(arrayList[i] > arrayList[i + 1]) {
 
+                }
+            }
+        }
     }
 
     public static void insertionSort(int[] arrayList) {
-
+        for(int j = 1; j < arrayList.length; ++j) {
+            int pivot = arrayList[j];
+            int i = j - 1;
+            while(i >= 0 && pivot < arrayList[i]) {
+                arrayList[i + 1] = arrayList[i--];
+            }
+            arrayList[i + 1] = pivot;
+        }
     }
-    // choose smallest in the unsorted part
+    // select smallest in the unsorted part
     public static void selectionSort(int[] arrayList) {
         for(int i = 0; i < arrayList.length; ++i) {
             for(int j = i + 1; j < arrayList.length; ++j) {
