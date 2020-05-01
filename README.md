@@ -489,30 +489,89 @@ Binary Search可在磁盘上
 ### Classic Binary Search
 
 ```java
-public class Solution {
-    /**
-     * @param nums: An integer array sorted in ascending order
-     * @param target: An integer
-     * @return: An integer
-     */
-    // https://www.lintcode.com/problem/classical-binary-search/description
-    public int findPosition(int[] nums, int target) {
-        if(nums == null || nums.length == 0) return -1;
-        int start = 0, end = nums.length - 1;
+package BinarySearch;
 
-        while(start < end) {
+public class BinarySearch {
+
+    public static void main(String[] args) {
+        int[] array = new int[]{1,2,2,3,4};
+        System.out.println(binarySearch(array, 2));
+    }
+    public static int binarySearch(int[] nums, int target) {
+        if(nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        int start = 0, end = nums.length - 1;
+        // nums = [1, 1], target = 1
+        // start = 0, end = 1
+        // nums = [1, 2], target = 1
+        while(start + 1 < end) { // == break [0, 1]  ×
+            // (0 + 1) / 2 = 0
             int mid = start + (end - start) / 2;
             if(nums[mid] == target) {
-                return mid;
+                start = mid; // start = mid = 0 dead loop
             } else if (nums[mid] > target) {
                 end = mid - 1;
             } else {
                 start = mid + 1;
             }
         }
-        if(nums[start] == target) return start;
+        if(nums[start] == target) {
+            return start;
+        }
         return -1;
     }
 }
+
+```
+
+### Last Position of Target
+
+```java
+public class Solution {
+    /**
+     * @param nums: An integer array sorted in ascending order
+     * @param target: An integer
+     * @return: An integer
+     */
+    public int lastPosition(int[] nums, int target) {
+        if(nums == null || nums.length == 0) return -1;
+        
+        int start = 0, end = nums.length - 1;
+        while(start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if(nums[mid] == target) {
+                start = mid; // [1, 2, 2△, 3, 4] find the multiple elems 
+            } else if (nums[mid] < target) {
+                start = mid + 1; // or start = mid;
+            } else {
+                end = mid - 1; // or end = mid;
+            }
+        }
+        if(nums[end] == target) {
+            return end;
+        }
+        if(nums[start] == target) {
+            return start;
+        }
+        return -1;
+    }
+}
+```
+
+#### First Position of Target
+
+```java
+...
+            if(nums[mid] == target) {
+                end = mid; // [1, 2△, 2, 3, 4]
+...
+        if(nums[start] == target) { // pay attention to the order of these two lines
+            return start;
+        }
+        if(nums[end] == target) {
+            return end;
+...
 ```
 
