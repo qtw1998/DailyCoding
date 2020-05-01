@@ -454,7 +454,7 @@ public class SortAlgos {
 
     
 
-![image-20200430181026505](../../Library/Application Support/typora-user-images/image-20200430181026505.png)
+![image-20200430181026505](https://site-pictures.oss-eu-west-1.aliyuncs.com/nfozy.jpg)
 
 ![image-20200430181440596](https://site-pictures.oss-eu-west-1.aliyuncs.com/sigcx.png)
 
@@ -462,9 +462,9 @@ public class SortAlgos {
 
 ![image-20200501110323420](https://site-pictures.oss-eu-west-1.aliyuncs.com/63y71.png)
 
-<img src="../../Library/Application Support/typora-user-images/image-20200501110416518.png" alt="image-20200501110416518" style="zoom:20%;" />
+<img src="https://site-pictures.oss-eu-west-1.aliyuncs.com/4x9p2.jpg" alt="image-20200501110416518" style="zoom:20%;" />
 
-<img src="../../Library/Application Support/typora-user-images/image-20200501110628076.png" alt="image-20200501110628076" style="zoom:30%;" />
+<img src="https://site-pictures.oss-eu-west-1.aliyuncs.com/s3anv.jpg" alt="image-20200501110628076" style="zoom:30%;" />
 
 ![image-20200501110924608](https://site-pictures.oss-eu-west-1.aliyuncs.com/regcd.png)
 
@@ -474,5 +474,15 @@ public class SortAlgos {
 >
 > 1. 通用二分模板
 > 2. dead loop 避免死循环
-> 3. 
+> 3. 可以使用二分法的题目
+> 4. 通过时间复杂度倒推算法
+> 5. 其他的O(logn)算法： 倍增法、辗转相除法、快速幂算法
+
+不比hashmap(Based on Memory)差虽然O(logn)  `n->the number of this array`
+
+Binary Search可在磁盘上 
+
+![image-20200501182525494](https://site-pictures.oss-eu-west-1.aliyuncs.com/0g3te.png)
+
+<img src="https://site-pictures.oss-eu-west-1.aliyuncs.com/z1g9c.jpg" alt="image-20200501182636959" style="zoom:33%;" />
 
