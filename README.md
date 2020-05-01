@@ -128,7 +128,7 @@ public class Solution {
 }
 ```
 
-#### Balanced Binary Tree
+### Balanced Binary Tree
 
 ```java
 /**
@@ -163,7 +163,7 @@ public class Solution {
 }
 ```
 
-#### Validate Binary Search Tree
+### Validate Binary Search Tree
 
 - left - BST
 - right - BST
@@ -486,6 +486,8 @@ Binary Search可在磁盘上
 
 <img src="https://site-pictures.oss-eu-west-1.aliyuncs.com/z1g9c.jpg" alt="image-20200501182636959" style="zoom:33%;" />
 
+### Classic Binary Search
+
 ```java
 public class Solution {
     /**
@@ -493,6 +495,7 @@ public class Solution {
      * @param target: An integer
      * @return: An integer
      */
+    // https://www.lintcode.com/problem/classical-binary-search/description
     public int findPosition(int[] nums, int target) {
         if(nums == null || nums.length == 0) return -1;
         int start = 0, end = nums.length - 1;
