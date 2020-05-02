@@ -26,6 +26,7 @@ public class BinarySearch {
                 start = mid + 1;
             }
         }
+
         if(nums[start] == target) {
             return start;
         }
