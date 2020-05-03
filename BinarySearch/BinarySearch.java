@@ -15,7 +15,6 @@ public class BinarySearch {
         // nums = [1, 1], target = 1
         // start = 0, end = 1
         // nums = [1, 2], target = 1
-
         while(start + 1 < end) { // == break [0, 1]  ×
             // (0 + 1) / 2 = 0
             int mid = start + (end - start) / 2;
