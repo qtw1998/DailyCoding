@@ -29,7 +29,7 @@ class MyLinkedList {
         }
         ListNode newNode = new ListNode(val);
         newNode.next = cur.next;
-        pre.next = newNode;
+        cur.next = newNode;
     }
     
     public int get(int location) {
@@ -63,12 +63,12 @@ class MyLinkedList {
     //     }
     //     return res.val;
     // }
-    ListNode res = null;
-    ListNode pre = dummy;
+    ListNode res = null; // the real deleted elem
+    ListNode pre = dummy; // pre is the before position elem
     for(int i = 0; i < location; ++i) {
         pre = pre.next;
     }
-    res = pre.next;
+    res = pre.next; 
     pre.next = pre.next.next;
     
     return res.val;
