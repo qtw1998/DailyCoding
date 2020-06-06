@@ -23,12 +23,12 @@ class MyLinkedList {
         //     newNode.next = head;
         //     head = newNode;
         // }
-        ListNode pre = dummy;
+        ListNode cur = dummy;
         for (int i = 0; i < location; i++) {
-            pre = pre.next;
+            cur = cur.next;
         }
         ListNode newNode = new ListNode(val);
-        newNode.next = pre.next;
+        newNode.next = cur.next;
         pre.next = newNode;
     }
     
