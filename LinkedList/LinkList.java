@@ -3,10 +3,10 @@ package LinkedList;
 public class LinkList {
 
     public static void main(final String[] args) {
-        runLinedList();
+        runLinkedList();
     }
 
-    public static void runLinedList() {
+    public static void runLinkedList() {
         System.out.println("LinkedList");
 
         ListNode node1 = new ListNode(1);
